@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphic Design &amp; Multimedia Classes &mdash; Mission College</title>
+<meta name="description" content="Fall classes in the Graphic Design &amp; Multimedia department at Mission College: 3D animation, web development, digital video, UX design, and JavaScript.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    min-height:100vh;font-family:'Helvetica Neue',Arial,Helvetica,sans-serif;color:#fff;
+    font-size:16px;
+    background:radial-gradient(620px 480px at 78% 4%,rgba(120,90,255,.42),transparent 60%),
+               radial-gradient(700px 620px at 86% 70%,rgba(40,130,255,.32),transparent 62%),
+               radial-gradient(520px 560px at -6% 40%,rgba(80,60,200,.30),transparent 60%),
+               linear-gradient(160deg,#0f122d 0%,#2e1a5c 52%,#14286e 100%);
+    background-attachment:fixed;
+    padding:44px 20px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{width:100%;max-width:1040px;margin:0 auto;}
+
+  header{text-align:center;margin-bottom:30px;}
+  .logo{width:104px;height:auto;margin:0 auto 20px;display:block;}
+  h1{font-size:30px;font-weight:700;letter-spacing:.4px;line-height:1.25;margin-bottom:10px;}
+  .sub{font-size:1em;line-height:1.6;color:#c3cdeb;max-width:620px;margin:0 auto;}
+
+  .banner{
+    background:rgba(255,255,255,.06);border:1px solid rgba(150,180,255,.28);
+    border-radius:16px;padding:18px 22px;margin:26px auto 26px;max-width:720px;text-align:center;
+  }
+  .banner .eyebrow{font-size:12px;letter-spacing:1.6px;color:#96b4ff;font-weight:700;margin-bottom:7px;}
+  .banner h2{font-size:20px;font-weight:700;margin-bottom:6px;}
+  .banner p{font-size:1em;line-height:1.55;color:#c3cdeb;}
+  .banner .date{color:#f7a92d;font-weight:700;}
+
+  .ctas{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px;}
+  a.btn{
+    display:block;text-decoration:none;color:#fff;text-align:left;
+    border-radius:14px;padding:16px 20px;
+    border:2px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  a.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.42);}
+  a.btn:focus-visible{outline:3px solid #ffd479;outline-offset:3px;}
+  a.btn .t{font-size:16px;font-weight:700;display:block;margin-bottom:3px;}
+  a.btn .d{font-size:13.5px;color:#eef2ff;display:block;line-height:1.45;}
+  a.primary{background:linear-gradient(90deg,rgba(99,102,241,.55),rgba(139,92,246,.55));border-color:#8b8eff;}
+  a.apply{background:linear-gradient(90deg,rgba(16,185,129,.45),rgba(56,189,248,.40));border-color:#5be38a;}
+  a.sched{background:linear-gradient(90deg,rgba(56,189,248,.42),rgba(99,102,241,.42));border-color:#7fddff;}
+  a.cvc{background:linear-gradient(90deg,rgba(247,169,45,.42),rgba(236,72,153,.36));border-color:#f7a92d;}
+
+  .sechead{display:flex;align-items:center;gap:14px;margin:44px 0 20px;}
+  .sechead h2{font-size:21px;font-weight:700;white-space:nowrap;}
+  .sechead .rule{flex:1;height:1px;background:rgba(150,180,255,.28);}
+
+  .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;}
+  .course{
+    background:rgba(255,255,255,.06);border:1px solid rgba(150,180,255,.24);
+    border-radius:16px;padding:22px;display:flex;flex-direction:column;
+    transition:transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .course:hover{transform:translateY(-3px);border-color:rgba(180,200,255,.5);background:rgba(255,255,255,.09);}
+  .chead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;}
+  .cnum{font-size:12.5px;font-weight:700;letter-spacing:1.5px;color:#96b4ff;}
+  .level{font-size:10.5px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;
+         padding:4px 9px;border-radius:20px;border:1.5px solid;white-space:nowrap;}
+  .level.intro{color:#a8e9ff;border-color:#7fddff;background:rgba(56,189,248,.20);}
+  .level.inter{color:#d9c2ff;border-color:#b48cff;background:rgba(139,92,246,.24);}
+  .level.cap{color:#b6f5c9;border-color:#5be38a;background:rgba(34,197,94,.22);}
+  .course h3{font-size:19px;font-weight:700;line-height:1.3;margin-bottom:11px;}
+  .course p{font-size:1em;line-height:1.6;color:#e4eaFB;margin-bottom:16px;}
+
+  .cfoot{margin-top:auto;}
+  .clinks{
+    display:flex;flex-direction:column;align-items:flex-start;gap:15px;
+    margin-top:18px;padding-top:18px;border-top:1px solid rgba(150,180,255,.22);
+  }
+  .clink{
+    font-size:.875em;font-weight:700;text-decoration:none;
+    border-bottom:1.5px solid;padding-bottom:1px;
+    transition:color .15s ease,border-color .15s ease;
+    color:#ffcf8a;border-color:rgba(247,169,45,.6);
+  }
+  .clink:hover{color:#ffe0ad;border-color:#ffd479;}
+  .clink:focus-visible{outline:3px solid #ffd479;outline-offset:3px;}
+  .cnote{font-size:.8125em;color:#b8c2e0;line-height:1.5;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:7px;}
+  .chip{font-size:11.5px;font-weight:700;padding:6px 11px;border-radius:20px;border:1.5px solid;}
+  .c1{color:#fff;background:rgba(99,102,241,.28);border-color:#8b8eff;}
+  .c2{color:#fff;background:rgba(139,92,246,.28);border-color:#b48cff;}
+  .c3{color:#fff;background:rgba(56,189,248,.28);border-color:#7fddff;}
+  .c4{color:#fff;background:rgba(34,197,94,.28);border-color:#5be38a;}
+
+  .prompt{text-align:center;margin:30px 0 18px;}
+  .prompt h2{font-size:22px;font-weight:700;margin-bottom:8px;}
+  .prompt p{font-size:1em;color:#dbe3f7;line-height:1.6;}
+  .foot{margin-top:46px;text-align:center;font-size:12.5px;color:#a3aecd;line-height:1.7;}
+
+  @media (max-width:860px){ .ctas{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:620px){
+    body{padding:32px 16px 48px;}
+    h1{font-size:24px;}
+    .ctas{grid-template-columns:1fr;}
+    .courses{grid-template-columns:1fr;}
+    .sechead h2{font-size:19px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img class="logo" src="logo.png" width="259" height="320" alt="Mission College Graphic Design &amp; Multimedia">
+    <h1>Graphic Design &amp; Multimedia</h1>
+    <p class="sub">We combine software training with a strong emphasis on developing your creative skills to work in the industry.</p>
+  </header>
+
+  <div class="banner">
+    <div class="eyebrow">NOW ENROLLING &middot; FALL 2026</div>
+    <h2>Classes are open across the department</h2>
+    <p>3D animation, web development, digital video, UX design, and JavaScript.<br><span class="date">Register now &mdash; seats fill before the term begins.</span></p>
+  </div>
+
+  <div class="prompt">
+    <h2>Ready to enroll?</h2>
+    <p>Register in the Student Portal, or apply first if you&rsquo;re new to Mission College.</p>
+  </div>
+
+  <div class="ctas">
+      <a class="btn primary" href="https://generalssb-prod.wvm.elluciancloud.com/BannerExtensibility/customPage/page/myPortal_landing" target="_blank" rel="noopener">
+        <span class="t">Add a Class &rarr;</span>
+        <span class="d">Current students &mdash; register in the Student Portal</span>
+      </a>
+
+      <a class="btn apply" href="https://missioncollege.edu/admissions/apply.html" target="_blank" rel="noopener">
+        <span class="t">Apply to Mission College &rarr;</span>
+        <span class="d">New students &mdash; start here, it&rsquo;s free to apply</span>
+      </a>
+
+      <a class="btn sched" href="https://schedule.wvm.edu/?college&amp;subj=gds" target="_blank" rel="noopener">
+        <span class="t">See the Current Schedule &rarr;</span>
+        <span class="d">Browse all Graphic Design (GDS) classes and sections</span>
+      </a>
+
+      <a class="btn cvc" href="https://search.cvc.edu/search?filter%5Bdisplay_home_school%5D=false&amp;filter%5Bsearch_all_universities%5D=false&amp;filter%5Buniversity_id%5D=603&amp;filter%5Bsearch_type%5D=open_search&amp;filter%5Bsubject%5D=gds&amp;commit=Find+Classes" target="_blank" rel="noopener">
+        <span class="t">Find GDS Classes on CVC &rarr;</span>
+        <span class="d">At another CA community college? Enroll through the CVC Exchange</span>
+      </a>
+  </div>
+
+  <div class="sechead">
+    <h2>Fall Classes</h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="courses">
+    <article class="course">
+      <div class="chead">
+        <span class="cnum">GDS 039A</span>
+        <span class="level intro">Introductory</span>
+      </div>
+      <h3>3D Animation and Modeling</h3>
+      <p>Build 3D art assets for animation. Learn modeling, texture mapping, and lighting in industry software, plus the history and current trends of computer animation.</p>
+      <div class="cfoot">
+        <div class="chips">
+          <span class="chip c1">3D Modeling</span>
+          <span class="chip c2">Texture Mapping</span>
+          <span class="chip c3">Lighting</span>
+          <span class="chip c4">Animation History</span>
+        </div>
+        <div class="clinks">
+          <a class="clink l-cvc" href="https://search.cvc.edu/courses/15750739?filter%5Bday_ids%5D%5B%5D=1&amp;filter%5Bday_ids%5D%5B%5D=2&amp;filter%5Bday_ids%5D%5B%5D=3&amp;filter%5Bday_ids%5D%5B%5D=4&amp;filter%5Bday_ids%5D%5B%5D=5&amp;filter%5Bday_ids%5D%5B%5D=6&amp;filter%5Bday_ids%5D%5B%5D=7&amp;filter%5Bdelivery_method_subtypes%5D%5B%5D=online_sync&amp;filter%5Bdelivery_method_subtypes%5D%5B%5D=online_async&amp;filter%5Bdelivery_methods%5D%5B%5D=online&amp;filter%5Bdisplay_home_school%5D=true&amp;filter%5Bdistance%5D=70&amp;filter%5Bmax_credits_range%5D=20&amp;filter%5Bmin_credits_range%5D=0.1&amp;filter%5Bprerequisites%5D%5B%5D=&amp;filter%5Bprerequisites%5D%5B%5D=has_prereqs&amp;filter%5Bprerequisites%5D%5B%5D=no_prereqs&amp;filter%5Bresidency_id%5D=5&amp;filter%5Bsearch_all_universities%5D=false&amp;filter%5Bsearch_type%5D=open_search&amp;filter%5Bsession_names%5D%5B%5D=Fall+2025&amp;filter%5Bsession_names%5D%5B%5D=Winter+2026&amp;filter%5Bsession_names%5D%5B%5D=Spring+2026&amp;filter%5Bsession_names%5D%5B%5D=Summer+2026&amp;filter%5Bsession_names%5D%5B%5D=Fall+2026&amp;filter%5Bshow_only_available%5D=true&amp;filter%5Bshow_untimed%5D=true&amp;filter%5Bsort%5D=oei&amp;filter%5Bstart_date%5D=2026-08-14&amp;filter%5Bsubject%5D=gds&amp;filter%5Btarget_school_ids%5D%5B%5D=603&amp;filter%5Btransferability%5D%5B%5D=articulation&amp;filter%5Buniversity_id%5D=603" target="_blank" rel="noopener">Enroll via CVC Exchange &rarr;</a>
+          <a class="clink l-add" href="https://generalssb-prod.wvm.elluciancloud.com/BannerExtensibility/customPage/page/myPortal_landing" target="_blank" rel="noopener">Current students add in the portal &rarr;</a>
+          <a class="clink l-apply" href="https://missioncollege.edu/admissions/apply.html" target="_blank" rel="noopener">New students apply here &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="course">
+      <div class="chead">
+        <span class="cnum">GDS 046</span>
+        <span class="level inter">Intermediate</span>
+      </div>
+      <h3>Web Design and Development 2</h3>
+      <p>A continuation of GDS 045 covering both creative design and front-end code &mdash; advanced type, color, and layout alongside intermediate to advanced HTML, CSS, and an introduction to JavaScript.</p>
+      <div class="cfoot">
+        <div class="chips">
+          <span class="chip c1">Advanced HTML + CSS</span>
+          <span class="chip c2">Type &amp; Layout</span>
+          <span class="chip c3">Intro to JavaScript</span>
+          <span class="chip c4">Front-End</span>
+        </div>
+        <div class="clinks">
+          <a class="clink l-cvc" href="https://search.cvc.edu/courses/2238433?filter%5Bday_ids%5D%5B%5D=1&amp;filter%5Bday_ids%5D%5B%5D=2&amp;filter%5Bday_ids%5D%5B%5D=3&amp;filter%5Bday_ids%5D%5B%5D=4&amp;filter%5Bday_ids%5D%5B%5D=5&amp;filter%5Bday_ids%5D%5B%5D=6&amp;filter%5Bday_ids%5D%5B%5D=7&amp;filter%5Bdelivery_method_subtypes%5D%5B%5D=online_sync&amp;filter%5Bdelivery_method_subtypes%5D%5B%5D=online_async&amp;filter%5Bdelivery_methods%5D%5B%5D=online&amp;filter%5Bdisplay_home_school%5D=true&amp;filter%5Bdistance%5D=70&amp;filter%5Bmax_credits_range%5D=20&amp;filter%5Bmin_credits_range%5D=0.1&amp;filter%5Bprerequisites%5D%5B%5D=&amp;filter%5Bprerequisites%5D%5B%5D=has_prereqs&amp;filter%5Bprerequisites%5D%5B%5D=no_prereqs&amp;filter%5Bresidency_id%5D=5&amp;filter%5Bsearch_all_universities%5D=false&amp;filter%5Bsearch_type%5D=open_search&amp;filter%5Bsession_names%5D%5B%5D=Fall+2025&amp;filter%5Bsession_names%5D%5B%5D=Winter+2026&amp;filter%5Bsession_names%5D%5B%5D=Spring+2026&amp;filter%5Bsession_names%5D%5B%5D=Summer+2026&amp;filter%5Bsession_names%5D%5B%5D=Fall+2026&amp;filter%5Bshow_only_available%5D=true&amp;filter%5Bshow_untimed%5D=true&amp;filter%5Bsort%5D=oei&amp;filter%5Bstart_date%5D=2026-08-14&amp;filter%5Bsubject%5D=gds&amp;filter%5Btarget_school_ids%5D%5B%5D=603&amp;filter%5Btransferability%5D%5B%5D=articulation&amp;filter%5Buniversity_id%5D=603" target="_blank" rel="noopener">Enroll via CVC Exchange &rarr;</a>
+          <a class="clink l-add" href="https://generalssb-prod.wvm.elluciancloud.com/BannerExtensibility/customPage/page/myPortal_landing" target="_blank" rel="noopener">Current students add in the portal &rarr;</a>
+          <a class="clink l-apply" href="https://missioncollege.edu/admissions/apply.html" target="_blank" rel="noopener">New students apply here &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="course">
+      <div class="chead">
+        <span class="cnum">GDS 074</span>
+        <span class="level intro">Introductory</span>
+      </div>
+      <h3>Digital Video Production 1</h3>
+      <p>Hands-on video production and post-production. Camera operation, audio and video technique, special effects, motion graphics basics, and editing.</p>
+      <div class="cfoot">
+        <div class="chips">
+          <span class="chip c1">Camera Operation</span>
+          <span class="chip c2">Video Editing</span>
+          <span class="chip c3">Motion Graphics</span>
+          <span class="chip c4">Audio</span>
+        </div>
+        <div class="clinks">
+          <p class="cnote">Hybrid section &mdash; not offered through the CVC Exchange.</p>
+          <a class="clink l-add" href="https://generalssb-prod.wvm.elluciancloud.com/BannerExtensibility/customPage/page/myPortal_landing" target="_blank" rel="noopener">Current students add in the portal &rarr;</a>
+          <a class="clink l-apply" href="https://missioncollege.edu/admissions/apply.html" target="_blank" rel="noopener">New students apply here &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="course">
+      <div class="chead">
+        <span class="cnum">GDS 077</span>
+        <span class="level cap">Capstone</span>
+      </div>
+      <h3>Interactive Projects &amp; Explorations in UXD</h3>
+      <p>Capstone course in UX and interaction design. Rapidly design and prototype hi-fidelity mobile, wearable, voice, and smart-appliance projects for your UX portfolio.</p>
+      <div class="cfoot">
+        <div class="chips">
+          <span class="chip c1">UX Design</span>
+          <span class="chip c2">Hi-Fi Prototyping</span>
+          <span class="chip c3">Mobile + Wearable</span>
+          <span class="chip c4">Portfolio</span>
+        </div>
+        <div class="clinks">
+          <a class="clink l-cvc" href="https://search.cvc.edu/courses/15750740?filter%5Bday_ids%5D%5B%5D=1&amp;filter%5Bday_ids%5D%5B%5D=2&amp;filter%5Bday_ids%5D%5B%5D=3&amp;filter%5Bday_ids%5D%5B%5D=4&amp;filter%5Bday_ids%5D%5B%5D=5&amp;filter%5Bday_ids%5D%5B%5D=6&amp;filter%5Bday_ids%5D%5B%5D=7&amp;filter%5Bdelivery_method_subtypes%5D%5B%5D=online_sync&amp;filter%5Bdelivery_method_subtypes%5D%5B%5D=online_async&amp;filter%5Bdelivery_methods%5D%5B%5D=online&amp;filter%5Bdisplay_home_school%5D=true&amp;filter%5Bdistance%5D=70&amp;filter%5Bmax_credits_range%5D=20&amp;filter%5Bmin_credits_range%5D=0.1&amp;filter%5Bprerequisites%5D%5B%5D=&amp;filter%5Bprerequisites%5D%5B%5D=has_prereqs&amp;filter%5Bprerequisites%5D%5B%5D=no_prereqs&amp;filter%5Bresidency_id%5D=5&amp;filter%5Bsearch_all_universities%5D=false&amp;filter%5Bsearch_type%5D=open_search&amp;filter%5Bsession_names%5D%5B%5D=Fall+2025&amp;filter%5Bsession_names%5D%5B%5D=Winter+2026&amp;filter%5Bsession_names%5D%5B%5D=Spring+2026&amp;filter%5Bsession_names%5D%5B%5D=Summer+2026&amp;filter%5Bsession_names%5D%5B%5D=Fall+2026&amp;filter%5Bshow_only_available%5D=true&amp;filter%5Bshow_untimed%5D=true&amp;filter%5Bsort%5D=oei&amp;filter%5Bstart_date%5D=2026-08-14&amp;filter%5Bsubject%5D=gds&amp;filter%5Btarget_school_ids%5D%5B%5D=603&amp;filter%5Btransferability%5D%5B%5D=articulation&amp;filter%5Buniversity_id%5D=603" target="_blank" rel="noopener">Enroll via CVC Exchange &rarr;</a>
+          <a class="clink l-add" href="https://generalssb-prod.wvm.elluciancloud.com/BannerExtensibility/customPage/page/myPortal_landing" target="_blank" rel="noopener">Current students add in the portal &rarr;</a>
+          <a class="clink l-apply" href="https://missioncollege.edu/admissions/apply.html" target="_blank" rel="noopener">New students apply here &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="course">
+      <div class="chead">
+        <span class="cnum">GDS 089</span>
+        <span class="level intro">Introductory</span>
+      </div>
+      <h3>JavaScript 1</h3>
+      <p>Build interactive web pages with JavaScript. Covers the basics, arrays, objects, DOM scripting, events, and forms, plus an intro to AJAX and JavaScript libraries.</p>
+      <div class="cfoot">
+        <div class="chips">
+          <span class="chip c1">Arrays &amp; Objects</span>
+          <span class="chip c2">DOM Scripting</span>
+          <span class="chip c3">Events &amp; Forms</span>
+          <span class="chip c4">AJAX</span>
+        </div>
+        <div class="clinks">
+          <a class="clink l-cvc" href="https://search.cvc.edu/courses/2238442?filter%5Bday_ids%5D%5B%5D=1&amp;filter%5Bday_ids%5D%5B%5D=2&amp;filter%5Bday_ids%5D%5B%5D=3&amp;filter%5Bday_ids%5D%5B%5D=4&amp;filter%5Bday_ids%5D%5B%5D=5&amp;filter%5Bday_ids%5D%5B%5D=6&amp;filter%5Bday_ids%5D%5B%5D=7&amp;filter%5Bdelivery_method_subtypes%5D%5B%5D=online_sync&amp;filter%5Bdelivery_method_subtypes%5D%5B%5D=online_async&amp;filter%5Bdelivery_methods%5D%5B%5D=online&amp;filter%5Bdisplay_home_school%5D=true&amp;filter%5Bdistance%5D=70&amp;filter%5Bmax_credits_range%5D=20&amp;filter%5Bmin_credits_range%5D=0.1&amp;filter%5Bprerequisites%5D%5B%5D=&amp;filter%5Bprerequisites%5D%5B%5D=has_prereqs&amp;filter%5Bprerequisites%5D%5B%5D=no_prereqs&amp;filter%5Bresidency_id%5D=5&amp;filter%5Bsearch_all_universities%5D=false&amp;filter%5Bsearch_type%5D=open_search&amp;filter%5Bsession_names%5D%5B%5D=Fall+2025&amp;filter%5Bsession_names%5D%5B%5D=Winter+2026&amp;filter%5Bsession_names%5D%5B%5D=Spring+2026&amp;filter%5Bsession_names%5D%5B%5D=Summer+2026&amp;filter%5Bsession_names%5D%5B%5D=Fall+2026&amp;filter%5Bshow_only_available%5D=true&amp;filter%5Bshow_untimed%5D=true&amp;filter%5Bsort%5D=oei&amp;filter%5Bstart_date%5D=2026-08-14&amp;filter%5Bsubject%5D=gds&amp;filter%5Btarget_school_ids%5D%5B%5D=603&amp;filter%5Btransferability%5D%5B%5D=articulation&amp;filter%5Buniversity_id%5D=603" target="_blank" rel="noopener">Enroll via CVC Exchange &rarr;</a>
+          <a class="clink l-add" href="https://generalssb-prod.wvm.elluciancloud.com/BannerExtensibility/customPage/page/myPortal_landing" target="_blank" rel="noopener">Current students add in the portal &rarr;</a>
+          <a class="clink l-apply" href="https://missioncollege.edu/admissions/apply.html" target="_blank" rel="noopener">New students apply here &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <p class="foot">Mission College &middot; Santa Clara, CA<br>Graphic Design &amp; Multimedia Department</p>
+
+</div>
+</body>
+</html>
